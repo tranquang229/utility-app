@@ -9,6 +9,7 @@ import { CssBaseline } from '@mui/material'
 
 ReactDOM.render(
     <StyledEngineProvider injectFirst>
+        {/* <BrowserRouter basename="/utility-app" */}
         <BrowserRouter>
             <CssBaseline />
             <App />
