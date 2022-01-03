@@ -949,6 +949,7 @@ const IconList = [
     'zoom_in',
     'zoom_out',
     'zoom_out_map',
+    'school'
 ]
 
 const AppIcon = () => {

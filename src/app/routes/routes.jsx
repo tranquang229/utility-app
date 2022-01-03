@@ -5,6 +5,8 @@ import materialRoutes from "app/views/material-kit/MaterialRoutes";
 import dashboardRoutes from "app/views/dashboard/DashboardRoutes";
 import sessionRoutes from "app/views/sessions/SessionRoutes";
 import MatxLayout from '../components/MatxLayout/MatxLayout'
+import learnRoutes from "app/views/learns/LearnRoutes";
+import learnOutsideRoutes from "app/views/learns/LearnOutsideRoutes";
 
 export const AllPages = () => {
   const all_routes = [
@@ -19,9 +21,11 @@ export const AllPages = () => {
         ...dashboardRoutes,
         ...chartsRoute,
         ...materialRoutes,
+        ...learnRoutes,
       ],
     },
     ...sessionRoutes,
+    ...learnOutsideRoutes,
     {
       path: "*",
       element: <NotFound />,

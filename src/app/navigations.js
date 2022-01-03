@@ -118,7 +118,6 @@ export const navigations = [
     {
         name: 'Charts',
         icon: 'trending_up',
-
         children: [
             {
                 name: 'Echarts',
@@ -132,5 +131,25 @@ export const navigations = [
         icon: 'launch',
         type: 'extLink',
         path: 'http://demos.ui-lib.com/matx-react-doc/',
+    },
+    {
+        label: 'LEARN',
+        type: 'label',
+    },
+    {
+        name: 'Youtube',
+        icon: 'school',
+        children: [
+            {
+                name: 'Material-UI-Lama',
+                path: '/learn/material-ui-youtube',
+                iconText: 'A',
+            },
+            {
+                name: 'Material-UI-Lama-Outside',
+                path: '/learn/material-ui-youtube-outside',
+                iconText: 'A',
+            },
+        ],
     },
 ]
