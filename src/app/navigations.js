@@ -5,6 +5,22 @@ export const navigations = [
         icon: 'dashboard',
     },
     {
+        label: 'UTILITY',
+        type: 'label',
+    },
+    {
+        name: 'Utility',
+        icon: 'security',
+        children: [
+            {
+                name: 'Git branch',
+                iconText: 'GB',
+                path: '/utility/git-branch-generator',
+            },
+        ],
+    },
+
+    {
         label: 'PAGES',
         type: 'label',
     },

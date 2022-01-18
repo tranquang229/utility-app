@@ -9,6 +9,7 @@
         "@mui/icons-material": "^5.1.1",
         "@mui/lab": "^5.0.0-alpha.55",
         "@mui/material": "^5.0.6",
+        "@mui/styles": "^5.3.0",
         "autosuggest-highlight": "^3.2.0",
         "axios": "^0.24.0",
         "babel-polyfill": "^6.26.0",
@@ -38,8 +39,8 @@
         "yup": "^0.32.11"
     },
     "scripts": {
-        "predeploy":"npm run build",
-        "deploy":"gh-pages -d build",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "build": "react-scripts build",
         "start": "react-app-rewired start",
         "test": "react-scripts test",

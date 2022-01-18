@@ -40,20 +40,26 @@ const Footer = () => {
 
     return (
         <ThemeProvider theme={footerTheme}>
-            <AppBar
-                color="primary"
-                position="static"
-                sx={{ zIndex: 96 }}
-            >
+            <AppBar color="primary" position="static" sx={{ zIndex: 96 }}>
                 <AppFooter>
                     <FooterContent>
-                            <Button variant="contained" color="secondary">
-                                <a  href="https://github.com/tranquang229/utility-app" target="_blank">Utility-app-github</a>
-                            </Button>
-                        <Span sx={{ m: "auto" }}></Span>
+                        <Button variant="contained" color="secondary">
+                            <a
+                                href="https://github.com/tranquang229/utility-app"
+                                target="_blank"
+                            >
+                                Utility-app-github
+                            </a>
+                        </Button>
+                        <Span sx={{ m: 'auto' }}></Span>
                         <Paragraph sx={{ m: 0 }}>
-                            Design and Developed by{' '}
-                            <a  href="https://facebook.com/tranquanghero229" target="_blank">Trần Văn Quang</a>
+                            Design and Developed by
+                            <a
+                                href="https://facebook.com/tranquanghero229"
+                                target="_blank"
+                            >
+                                Trần Văn Quang
+                            </a>
                         </Paragraph>
                     </FooterContent>
                 </AppFooter>

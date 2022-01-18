@@ -7,6 +7,7 @@ import sessionRoutes from "app/views/sessions/SessionRoutes";
 import MatxLayout from '../components/MatxLayout/MatxLayout'
 import learnRoutes from "app/views/learns/LearnRoutes";
 import learnOutsideRoutes from "app/views/learns/LearnOutsideRoutes";
+import utilityRoutes from "app/views/utility/UtilityRoutes";
 
 export const AllPages = () => {
   const all_routes = [
@@ -22,6 +23,7 @@ export const AllPages = () => {
         ...chartsRoute,
         ...materialRoutes,
         ...learnRoutes,
+        ...utilityRoutes
       ],
     },
     ...sessionRoutes,
