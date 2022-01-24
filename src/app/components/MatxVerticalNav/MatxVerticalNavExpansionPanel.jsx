@@ -86,18 +86,18 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
     const elementRef = useRef(null)
     const componentHeight = useRef(0)
     const { pathname } = useLocation()
-    const { name, icon, iconText, badge } = item
+    const { name, icon, iconText, badge, iconColor, textColor } = item
 
     const handleClick = () => {
         componentHeight.current = 0
-        calcaulateHeight(elementRef.current)
+        calculateHeight(elementRef.current)
         setCollapsed(!collapsed)
     }
 
-    const calcaulateHeight = useCallback((node) => {
+    const calculateHeight = useCallback((node) => {
         if (node.name !== 'child') {
             for (let child of node.children) {
-                calcaulateHeight(child)
+                calculateHeight(child)
             }
         }
 
@@ -109,7 +109,7 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
     useEffect(() => {
         if (!elementRef) return
 
-        calcaulateHeight(elementRef.current)
+        calculateHeight(elementRef.current)
 
         // OPEN DROPDOWN IF CHILD IS ACTIVE
         for (let child of elementRef.current.children) {
@@ -117,7 +117,7 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
                 setCollapsed(false)
             }
         }
-    }, [pathname, calcaulateHeight])
+    }, [pathname, calculateHeight])
 
     return (
         <NavExpandRoot>
@@ -130,9 +130,18 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
                 onClick={handleClick}
             >
                 <Box display="flex" alignItems="center">
-                    {icon && <Icon className="icon">{icon}</Icon>}
+                    {icon && (
+                        <Icon className="icon" sx={{ color: iconColor }}>
+                            {icon}
+                        </Icon>
+                    )}
                     {iconText && <BulletIcon />}
-                    <ItemText className="sidenavHoverShow">{name}</ItemText>
+                    <ItemText
+                        className="sidenavHoverShow"
+                        sx={{ color: textColor }}
+                    >
+                        {name}
+                    </ItemText>
                 </Box>
                 {badge && (
                     <BadgeValue className="sidenavHoverShow itemIcon">

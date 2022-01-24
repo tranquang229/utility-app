@@ -81,7 +81,12 @@ const MatxVerticalNav = ({ items }) => {
     const { mode } = settings.layout1Settings.leftSidebar
 
     const renderLevels = (data) => {
+        console.log(
+            '🚀 ~ file: MatxVerticalNav.jsx ~ line 84 ~ renderLevels ~ data',
+            data
+        )
         return data.map((item, index) => {
+            debugger
             if (item.type === 'label')
                 return (
                     <ListLabel
@@ -119,7 +124,10 @@ const MatxVerticalNav = ({ items }) => {
                             {(() => {
                                 if (item.icon) {
                                     return (
-                                        <Icon className="icon">
+                                        <Icon
+                                            className="icon"
+                                            color={item.color || 'primary'}
+                                        >
                                             {item.icon}
                                         </Icon>
                                     )
@@ -151,7 +159,13 @@ const MatxVerticalNav = ({ items }) => {
                             key={index}
                             to={item.path}
                             className={({ isActive }) =>
-                                isActive ? `navItemActive ${mode === 'compact' && 'compactNavItem'}` : `${mode === 'compact' && 'compactNavItem'}`
+                                isActive
+                                    ? `navItemActive ${
+                                          mode === 'compact' && 'compactNavItem'
+                                      }`
+                                    : `${
+                                          mode === 'compact' && 'compactNavItem'
+                                      }`
                             }
                         >
                             <ButtonBase
@@ -169,7 +183,8 @@ const MatxVerticalNav = ({ items }) => {
                                             className={`nav-bullet`}
                                             sx={{
                                                 display:
-                                                    mode === 'compact' && 'none',
+                                                    mode === 'compact' &&
+                                                    'none',
                                             }}
                                         />
                                         <Box
@@ -178,7 +193,8 @@ const MatxVerticalNav = ({ items }) => {
                                                 ml: '20px',
                                                 fontSize: '11px',
                                                 display:
-                                                    mode !== 'compact' && 'none',
+                                                    mode !== 'compact' &&
+                                                    'none',
                                             }}
                                         >
                                             {item.iconText}

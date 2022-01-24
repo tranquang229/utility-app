@@ -3,6 +3,7 @@ export const navigations = [
         name: 'Dashboard',
         path: '/dashboard/default',
         icon: 'dashboard',
+        iconColor: '#00ff00',
     },
     {
         label: 'UTILITY',
@@ -10,12 +11,14 @@ export const navigations = [
     },
     {
         name: 'Utility',
-        icon: 'security',
+        icon: 'extension',
+        iconColor: '#FFBF00',
         children: [
             {
                 name: 'Git branch',
                 iconText: 'GB',
                 path: '/utility/git-branch-generator',
+                textColor: 'red',
             },
         ],
     },
